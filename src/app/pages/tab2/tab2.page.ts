@@ -7,6 +7,13 @@ import { Component } from '@angular/core';
 })
 export class Tab2Page {
 
+  categories: string[] = ["business","entertainment","general","health","science","sports","technology"]
+  selectedCategory:string=this.categories[0];
+
   constructor() {}
+
+  segmentChanged(category: any) {
+    console.log(category)
+  }
 
 }
