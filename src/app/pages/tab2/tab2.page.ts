@@ -27,7 +27,10 @@ export class Tab2Page implements OnInit{
 
   segmentChanged(category: any) {
    this.selectedCategory = category.detail.value;
-    console.log(category.detail.value)
+    this.newService.getTopHeadlineByCategory(this.selectedCategory)
+    .subscribe(article => {
+      this.articles = [...article]
+    })
   }
 
 }
